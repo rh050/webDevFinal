@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongojs = require('mongojs');
 
-// MongoDB setup we use two collection for products 'final_<Raziel_Oranit>' and for orders 'final_<Raziel_Oranit>_Orders'
+// MongoDB setup we use two collections for products 'final_<Raziel_Oranit>' and for orders 'final_<Raziel_Oranit>_Orders'
 const db = mongojs('mongodb+srv://Student:webdev2024student@cluster0.uqyflra.mongodb.net/webdev2024');
 const orderCollection = db.collection('final_<Raziel_Oranit>_Orders');
 
