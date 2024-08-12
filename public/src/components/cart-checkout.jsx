@@ -3,7 +3,7 @@ import { ShopContext } from "../context/shop-context";
 
 export const CartCheckout = (props) => {
     const { id, productName, price, productImage } = props.data;
-    const { cartItems, addToCart, removeFromCart, updateCartItemCount, updateCartOnServer, updateCartOnServerReduce } = useContext(ShopContext);
+    const { cartItems} = useContext(ShopContext);
     return (
         <div className="cartItem">
             <img src={productImage} alt={productName} />

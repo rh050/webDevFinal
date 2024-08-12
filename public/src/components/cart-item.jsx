@@ -23,6 +23,8 @@ export const CartItem = (props) => {
             onChange={(e) => { updateCartItemCount(Number(e.target.value), id); updateCartOnServer(id); }}
           />
           <button onClick={() => { addToCart(id); updateCartOnServer(id); }}> + </button>
+          <button onClick={() => { updateCartItemCount(0,id); updateCartOnServerReduce(id); }}> מחק </button>
+          
         </div>
       </div>
     </div>

@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import { ShopContext } from "../../context/shop-context";
-import axios from "axios";
-
 export const Product = (props) => {
-  const { id, productName, price,productImage, imageName } = props.data;
+  const { id, productName, price,productImage,productDescription } = props.data;
   const { addToCart, cartItems, updateCartOnServer } = useContext(ShopContext);
   const cartItemCount = cartItems[id];
 
@@ -14,6 +12,7 @@ export const Product = (props) => {
       <div className="description">
         <p>
           <b>{productName}</b>
+            <h2>{productDescription}</h2>
         </p>
         <p> ₪{price}</p>
       </div>

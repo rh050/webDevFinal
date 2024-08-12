@@ -2,7 +2,7 @@ const express = require('express');
 const mongojs = require("mongojs");
 const router = express.Router();
 
-// MongoDB setup
+// MongoDB setup we use two collection for products 'final_<Raziel_Oranit>' and for orders 'final_<Raziel_Oranit>_Orders'
 const db = mongojs('mongodb+srv://Student:webdev2024student@cluster0.uqyflra.mongodb.net/webdev2024');
 const tasks_coll = db.collection('final_<Raziel_Oranit>');
 
@@ -57,7 +57,7 @@ router.post('/update', (req, res) => {
                         console.error('Failed to remove product from MongoDB:', err);
                         return res.status(500).json({ error: 'Failed to remove product from MongoDB' });
                     }
-                    console.log('Product removed from MongoDB:', result);
+                    console.log('Product removed from MongoDB:');
                     return res.status(200).json(result);
                 });
             } else {
@@ -67,7 +67,7 @@ router.post('/update', (req, res) => {
                         console.error('Failed to update product in MongoDB:', err);
                         return res.status(500).json({ error: 'Failed to update product in MongoDB' });
                     }
-                    console.log('Product updated in MongoDB:', result);
+                    console.log('Product updated in MongoDB');
                     return res.status(200).json(result);
                 });
             }
@@ -78,7 +78,7 @@ router.post('/update', (req, res) => {
                     console.error('Failed to add product to MongoDB:', err);
                     return res.status(500).json({ error: 'Failed to add product to MongoDB' });
                 }
-                console.log('Product added to MongoDB:', result);
+                console.log('Product added to MongoDB');
                 return res.status(200).json(result);
             });
         }

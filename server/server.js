@@ -1,19 +1,14 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 const cors = require('cors');
-const mongojs = require('mongojs');
 const cartRoutes = require('./routes/cart');
-const checkoutRoutes = require('./routes/checkout'); // Import the checkout routes
+const checkoutRoutes = require('./routes/checkout'); 
 
 const app = express();
 
-app.use(express.json()); // Middleware to parse JSON body
+app.use(express.json()); 
 
-// Use CORS middleware to allow cross-origin requests
 app.use(cors());
 
-// Serve static files from the 'static' directory
 app.use(express.static('static'));
 
 // Define a simple route
@@ -23,7 +18,7 @@ app.get('/', (req, res) => {
 
 // Use the cart routes
 app.use('/api/cart', cartRoutes);
-app.use('/api/checkout', checkoutRoutes); // Use the checkout routes
+app.use('/api/checkout', checkoutRoutes); 
 
 // Start the server
 const PORT = process.env.PORT || 5000;
